@@ -1,0 +1,52 @@
+' Visuals
+skinparam WrapWidth 130
+skinparam DefaultFontName Ubuntu
+skinparam BackgroundColor #282828
+skinparam Cloud {
+    BackgroundColor #383840
+    FontSize 35
+    FontColor #d30
+}
+skinparam Note {
+    BackgroundColor #a32-a03221
+    BorderColor #822100
+    FontColor #ddd
+    FontSize 11
+}
+skinparam Actor {
+    BackgroundColor #557-335
+    BorderColor #446
+    Style awesome
+    FontColor #fff
+}
+skinparam Agent {
+    BackgroundColor #222
+    BorderColor #181818
+    FontColor White
+    StereotypeFontColor #aaa
+}
+skinparam Arrow {
+    Color #ccc
+    FontColor #ddd
+}
+
+
+' Utilities
+!unquoted procedure $ObsidianNode($handle, $c_sprite, $title="", $desc="", $stereo="")
+!if ($title == "")
+    !local $caption = ""
+!else
+    !local $caption = "**" + $title + "**\n"
+!endif
+!if ($desc == "")
+    !local $d = ""
+!else
+    !local $d = "\n<color:#cccccc><size:11>" + $desc + "</size></color>"
+!endif
+!local $res = $caption + "<" + $c_sprite + ">" + $d
+!if ($stereo == "")
+    agent $handle as "$res"
+!else
+    agent "$res" <<$stereo>> as $handle
+!endif
+!endprocedure
