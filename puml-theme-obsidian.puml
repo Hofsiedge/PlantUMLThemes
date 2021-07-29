@@ -2,6 +2,7 @@
 skinparam WrapWidth 130
 skinparam DefaultFontName Ubuntu
 skinparam BackgroundColor #282828
+
 skinparam Cloud {
     BackgroundColor #383840
     FontSize 35
@@ -28,6 +29,10 @@ skinparam Agent {
 skinparam Arrow {
     Color #ccc
     FontColor #ddd
+}
+skinparam Component {
+    FontColor #aaa
+    FontSize 20
 }
 
 
